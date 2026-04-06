@@ -69,7 +69,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .adm-dashboard-view {
         padding: 15px;
         margin-left: 65px; 
