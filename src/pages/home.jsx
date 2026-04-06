@@ -3,6 +3,7 @@ import './home.css';
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
 import Dashboard from '../components/dashboard';
+import Seo from '../components/seo';
 
 const Home = () => {
    return (
@@ -18,6 +19,7 @@ const Home = () => {
 
 
             <Dashboard />
+            <Seo />
 
 
 
