@@ -23,23 +23,24 @@ body{
     padding: 0 20px;
     box-sizing: border-box; 
 }
-
 @media (max-width: 768px) {
+    .adm-layout {
+        display: block !important;
+        position: relative;
+    }
+
+    .adm-sidebar {
+        position: fixed;
+        z-index: 9999;
+        transition: 0.3s;
+    }
+
     .adm-main-wrapper {
-        margin-left: 0; 
-    }
-    
-    .adm-header {
-        padding: 0 10px;
-        justify-content: space-around; 
-    }
-
-    .adm-search-container {
-        flex: 1;
-        margin-right: 10px;
-    }
-
-    .adm-profile-text, .adm-lang-pill {
-        display: none; 
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

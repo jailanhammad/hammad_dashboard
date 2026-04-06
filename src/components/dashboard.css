@@ -1,0 +1,86 @@
+.adm-dashboard-view {
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+.adm-view-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.adm-view-header p {
+    color: #666;
+    font-size: 15px;
+}
+
+.adm-charts-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; 
+    gap: 20px;
+    width: 100%;
+}
+
+.adm-chart-card {
+    background: #111111;
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.adm-chart-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.placeholder-chart {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-chart img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; 
+}
+
+@media (max-width: 1024px) {
+    .adm-dashboard-view {
+        padding: 20px;
+        margin-left: 70px; 
+        width: calc(100% - 70px);
+    }
+
+    .adm-charts-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media (max-width: 600px) {
+    .adm-dashboard-view {
+        padding: 15px;
+        margin-left: 65px; 
+        width: calc(100% - 65px);
+    }
+
+    .adm-view-header h1 {
+        font-size: 22px; 
+    }
+
+    .adm-chart-card {
+        padding: 15px;
+    }
+}

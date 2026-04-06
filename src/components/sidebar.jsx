@@ -34,7 +34,6 @@ const Sidebar = () => {
     return (
         <aside className="adm-sidebar">
             <div className="adm-sidebar-header">
-                {/* Your Logo Img here */}
                 <div className="adm-logo-icon">
                     <img src={logo} alt="logo" />
                 </div>
