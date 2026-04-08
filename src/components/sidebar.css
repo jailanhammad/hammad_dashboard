@@ -93,8 +93,13 @@
 
 
 @media (max-width: 1024px) {
+
     .adm-sidebar {
         width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
     }
     .adm-logo-text, .adm-item-name {
         display: none;
@@ -110,9 +115,15 @@
 }
 
 @media (max-width: 768px) {
+
     .adm-sidebar {
-        width: 60px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
     }
+  
 }
 .adm-sidebar-link {
     text-decoration: none;
