@@ -9,12 +9,14 @@ import Installments from './pages/installments';
 import Sell from './pages/Sell';
 import Reviews from './pages/reviews';
 import Notifications from './pages/notifications';
+import Settings from './pages/settings';
 
 
 const RoutingApp = () => {
     return (
         <Router>
             <Routes>
+                
                 <Route path="/" element={<Home />} />
                 <Route path="/website" element={<Website />} />
                 <Route path="/mobile-app" element={<App />} />
@@ -25,10 +27,7 @@ const RoutingApp = () => {
                 <Route path="/sell-requests" element={<Sell />} />
                 <Route path="/reviews" element={<Reviews />} />
                 <Route path="/notifications" element={<Notifications />} />
-                {/* <Route path="/settings" element={<Settings />} /> */}
-
-
-
+                <Route path="/settings" element={<Settings />} />
 
             </Routes>
         </Router>

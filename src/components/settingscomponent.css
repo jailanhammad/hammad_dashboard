@@ -1,0 +1,96 @@
+:root {
+    --sys-bg: #0a0a0a;
+    --sys-card: #141414;
+    --sys-input-bg: #1c1c1c;
+    --sys-red: #e31e24;
+    --sys-gold: #b38b2d;
+    --sys-green: #27ae60;
+    --sys-border: #222;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: poppins; }
+
+body.sys-root {
+    background-color: var(--sys-bg);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding: 30px 20px;
+}
+
+.sys-container { max-width: 1200px; margin: 0 auto; }
+
+.sys-header { margin-bottom: 30px; }
+.sys-title { font-size: 32px; font-weight: 700; }
+.sys-subtitle { color: #666; font-size: 14px; margin-top: 5px; }
+
+.sys-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.sys-panel {
+    background: var(--sys-card);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid var(--sys-border);
+}
+
+.sys-panel-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.sys-panel-head h3 { font-size: 18px; font-weight: 600; }
+
+.sys-icon-red { color: #c0392b; }
+.sys-icon-gold { color: var(--sys-gold); }
+.sys-icon-green { color: var(--sys-green); }
+
+.sys-group { margin-bottom: 15px; }
+.sys-group label { display: block; font-size: 12px; color: #888; margin-bottom: 8px; }
+.sys-input {
+    width: 100%; background: var(--sys-input-bg); border: 1px solid var(--sys-border);
+    padding: 12px; border-radius: 8px; color: #fff; outline: none;
+}
+
+.sys-btn-save {
+    background: var(--sys-red); color: #fff; border: none; padding: 12px 20px;
+    border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 10px;
+}
+
+.sys-list-item, .sys-toggle-item {
+    background: var(--sys-input-bg); padding: 15px; border-radius: 12px;
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+}
+
+.sys-list-item h4, .sys-toggle-item h4 { font-size: 15px; margin-bottom: 4px; }
+.sys-list-item p, .sys-toggle-item p { font-size: 12px; color: #666; }
+
+.sys-tag-active { color: var(--sys-green); font-size: 12px; font-weight: 600; }
+.sys-role { padding: 4px 12px; border-radius: 50px; font-size: 11px; }
+.sys-role-super { color: var(--sys-gold); background: rgba(179, 139, 45, 0.1); border: 1px solid var(--sys-gold); }
+.sys-role-manager { color: #8e44ad; background: rgba(142, 68, 173, 0.1); border: 1px solid #8e44ad; }
+
+.sys-btn-add {
+    width: 100%; background: transparent; border: 1px solid #333; color: #fff;
+    padding: 10px; border-radius: 8px; cursor: pointer; margin-top: 5px;
+}
+
+.sys-switch { position: relative; display: inline-block; width: 44px; height: 22px; }
+.sys-switch input { opacity: 0; width: 0; height: 0; }
+.sys-slider {
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #333; transition: .4s; border-radius: 34px;
+}
+.sys-slider:before {
+    position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px;
+    background-color: white; transition: .4s; border-radius: 50%;
+}
+input:checked + .sys-slider { background-color: var(--sys-red); }
+input:checked + .sys-slider:before { transform: translateX(22px); }
+
+@media (max-width: 900px) {
+    .sys-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .sys-panel { padding: 15px; }
+    .sys-title { font-size: 26px; }
+}
