@@ -5,6 +5,7 @@ import Website from './pages/website';
 import App from './pages/app';
 import Vehicles from './pages/vehicles';
 import TestDrive from './pages/testdrive';
+import Installments from './pages/installments';
 
 
 const RoutingApp = () => {
@@ -16,6 +17,7 @@ const RoutingApp = () => {
                 <Route path="/mobile-app" element={<App />} />
                 <Route path="/vehicles" element={<Vehicles />} />
                 <Route path="/test-drive" element={<TestDrive />} />
+                <Route path="/installments" element={<Installments />} />
 
 
 

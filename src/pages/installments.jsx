@@ -1,11 +1,11 @@
 import React from 'react';
-import './testdrive.css';
+import './installments.css';
 import Sidebar from '../components/sidebar';
 import Header from '../components/header';
 import Seo from '../components/seo';
-import TestdriveRequests from '../components/testdriverequests';
+import InstalmentRequests from '../components/installmentrequests';
 
-const TestDrive = () => {
+const Installments = () => {
    return (
     <>
     
@@ -18,7 +18,7 @@ const TestDrive = () => {
                 <main className="adm-content-area">
 
 
-            <TestdriveRequests />
+            <InstalmentRequests />
             <Seo />
 
 
@@ -36,4 +36,4 @@ const TestDrive = () => {
    );
 };
 
-export default TestDrive;
+export default Installments;

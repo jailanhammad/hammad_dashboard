@@ -4,8 +4,7 @@ import pending from '../assets/home/pending.svg';
 import confirm from '../assets/home/confirm.svg';
 import reject from '../assets/home/reject.svg';
 
-
-const TestdriveRequests = () => {
+const InstalmentRequests = () => {
     return (
         <>
         
@@ -13,8 +12,8 @@ const TestdriveRequests = () => {
     <div class="hm-wrapper">
         <header class="hm-main-header">
             <div class="hm-title-area">
-                <h1 class="hm-heading-primary">Test Drive Bookings</h1>
-                <p class="hm-subtext">Manage test drive appointments</p>
+                <h1 class="hm-heading-primary">Installment Requests</h1>
+                <p class="hm-subtext">Manage financing and installment applications</p>
             </div>
             <button class="hm-btn-action-red">
                 <i class="fa-regular fa-calendar"></i> Calendar View
@@ -26,24 +25,25 @@ const TestdriveRequests = () => {
                 <i class="fa-regular fa-clock hm-icon-yellow">
                     <img src={pending} alt="pending-icon" />
                 </i>
-                <span class="hm-data-value">24</span>
+                <span class="hm-data-value">12</span>
                 <span class="hm-data-label">Pending</span>
             </div>
             <div class="hm-data-card">
                 <i class="fa-regular fa-circle-check hm-icon-green">
                 <img src={confirm} alt="pending-icon" />
                 </i>
-                <span class="hm-data-value">156</span>
+                <span class="hm-data-value">127</span>
                 <span class="hm-data-label">Confirmed</span>
             </div>
             <div class="hm-data-card">
                 <i class="fa-regular fa-circle-xmark hm-icon-red">
                 <img src={reject} alt="pending-icon" />
                 </i>
-                <span class="hm-data-value">12</span>
+                <span class="hm-data-value">9</span>
                 <span class="hm-data-label">Cancelled</span>
             </div>
         </section>
+
 
         <section class="hm-records-panel">
             <div class="hm-panel-top">
@@ -55,18 +55,18 @@ const TestdriveRequests = () => {
                         <tr>
                             <th>Customer</th>
                             <th>Vehicle</th>
-                            <th>Date</th>
-                            <th>Time</th>
+                            <th>Amount</th>
+                            <th>Duration</th>
                             <th>Status</th>
                             <th class="hm-text-end">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Ahmed Hassan</td>
-                            <td>BMW X5</td>
-                            <td>Mar 18, 2026</td>
-                            <td>10:00 AM</td>
+                            <td>Mohamed Samy</td>
+                            <td>Hyundai Cn7</td>
+                            <td>500,000</td>
+                            <td>48 months</td>
                             <td><span class="hm-status-tag hm-status-pending">pending</span></td>
                             <td class="hm-text-end">
                                 <button class="hm-btn-confirm">Confirm</button>
@@ -74,10 +74,10 @@ const TestdriveRequests = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Sarah Ali</td>
+                            <td>Ahmed Ashraf</td>
                             <td>Mercedes C-Class</td>
-                            <td>Mar 19, 2026</td>
-                            <td>2:00 PM</td>
+                            <td>1,500,000</td>
+                            <td>36 months</td>
                             <td><span class="hm-status-tag hm-status-confirmed">confirmed</span></td>
                             <td class="hm-text-end">
                                 <button class="hm-btn-confirm">Confirm</button>
@@ -99,4 +99,4 @@ const TestdriveRequests = () => {
       );
 }
  
-export default TestdriveRequests;
+export default InstalmentRequests;
