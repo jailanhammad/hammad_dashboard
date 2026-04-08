@@ -1,0 +1,119 @@
+:root {
+    --admin-bg-color: #0a0a0a;
+    --admin-card-bg: #111111;
+    --admin-input-bg: #1a1a1a;
+    --admin-primary-red: #dc2626;
+    --admin-border: #262626;
+    --bg-dark: #0a0a0a;
+    --card-bg: #111111;
+    --border-color: #333;
+    --text-main: #ffffff;
+    --text-muted: #888;
+    --accent-red: #ED1C24;
+    --btn-gray: #252525;
+}
+
+.admin-dashboard-wrapper {
+    background-color: var(--admin-bg-color);
+    padding: 40px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    min-height: 100vh;
+    color: white;
+}
+
+.admin-main-title { font-size: 28px; margin: 0; }
+.admin-sub-text { color: #a1a1a1; margin-top: 5px; margin-bottom: 25px; }
+
+.admin-tabs-list { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+
+.admin-tab-item {
+    background: var(--admin-input-bg);
+    color: white;
+    border: 1px solid var(--admin-border);
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: poppins;
+}
+
+.admin-tab-item.is-active {
+    background: var(--admin-primary-red);
+    border-color: var(--admin-primary-red);
+}
+
+.admin-content-card {
+    background: var(--admin-card-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 1000px;
+}
+
+.admin-card-header {
+    border-left: 4px solid var(--admin-primary-red);
+    padding-left: 15px;
+    font-size: 20px;
+    margin: 0;
+}
+
+.admin-field-container { margin-bottom: 20px; }
+.admin-field-label { display: block; margin-bottom: 8px; color: #a1a1a1; font-size: 14px; }
+
+.admin-input-wrapper {
+    background: var(--admin-input-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.admin-lang-indicator {
+    display: flex; gap: 15px; margin-bottom: 10px; 
+    border-bottom: 1px solid var(--admin-border); padding-bottom: 5px; font-size: 12px;
+}
+
+.admin-field-input, .admin-field-area {
+    width: 100%; background: transparent; border: none; 
+    color: white; font-size: 16px; outline: none; box-sizing: border-box;
+}
+
+.admin-upload-dropzone {
+    border: 2px dashed var(--admin-border);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    color: #a1a1a1;
+}
+
+.admin-upload-dropzone:hover { border-color: var(--admin-primary-red); }
+
+.admin-btn-group { display: flex; gap: 15px; margin-top: 30px; }
+
+.admin-btn-save {
+    flex: 2; background: var(--admin-primary-red); color: white;
+    border: none; padding: 14px; border-radius: 8px; font-weight: bold; cursor: pointer;
+}
+
+.admin-btn-preview {
+    flex: 1; background: white; color: black;
+    border: none; padding: 14px; border-radius: 8px; font-weight: bold; cursor: pointer;
+}
+
+.admin-tab-add-btn {
+    background: #262626; 
+    color: #ffffff;
+    border: 1px solid #333;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+    margin-left: 5px; 
+}
+
+.admin-tab-add-btn:hover {
+    background: #333333;
+    border-color: #444;
+}

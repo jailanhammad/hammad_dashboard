@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './sidebar.css';
 import logo from '../assets/home/logo.svg';
-import dash from '../assets/home/panel-icon-1.svg';
+import dash from '../assets/home/dash2.svg';
 import web from '../assets/home/panel-icon-2.svg';
 import app from '../assets/home/panel-icon-3.svg';
 import car from '../assets/home/panel-icon-4.svg';
@@ -13,22 +13,22 @@ import reviews from '../assets/home/panel-icon-9.svg';
 import notifications from '../assets/home/panel-icon-10.svg';
 import settings from '../assets/home/panel-icon-11.svg';
 import side from '../assets/home/panel-icon-12.svg';
+import { NavLink } from "react-router-dom";
+
 
 const Sidebar = () => {
-    const [activeItem, setActiveItem] = useState('Dashboard');
-
     const menuItems = [
-        { name: 'Dashboard', icon: dash },
-        { name: 'Website', icon: web },
-        { name: 'Mobile App', icon: app },
-        { name: 'Vehicles', icon: car },
-        { name: 'Brands', icon: brands },
-        { name: 'Test Drives', icon: test },
-        { name: 'Installments', icon: installments },
-        { name: 'Sell Requests', icon: sell},
-        { name: 'Reviews', icon: reviews},
-        { name: 'Notifications', icon: notifications },
-        { name: 'Settings', icon: settings},
+        { name: 'Dashboard', icon: dash, path: '/' },
+        { name: 'Website', icon: web, path: '/website' },
+        { name: 'Mobile App', icon: app, path: '/mobile-app' },
+        { name: 'Vehicles', icon: car, path: '/vehicles' },
+        { name: 'Brands', icon: brands, path: '/brands' },
+        { name: 'Test Drives', icon: test, path: '/test-drives' },
+        { name: 'Installments', icon: installments, path: '/installments' },
+        { name: 'Sell Requests', icon: sell, path: '/sell-requests' },
+        { name: 'Reviews', icon: reviews, path: '/reviews' },
+        { name: 'Notifications', icon: notifications, path: '/notifications' },
+        { name: 'Settings', icon: settings, path: '/settings' },
     ];
 
     return (
@@ -45,21 +45,23 @@ const Sidebar = () => {
 
             <nav className="adm-sidebar-nav">
                 {menuItems.map((item) => (
-                    <div 
+                    <NavLink 
                         key={item.name}
-                        className={`adm-sidebar-item ${activeItem === item.name ? 'active' : ''}`}
-                        onClick={() => setActiveItem(item.name)}
+                        to={item.path} 
+                        className={({ isActive }) => `adm-sidebar-link ${isActive ? 'is-active' : ''}`}
                     >
-                        <i>
-                            <img src={item.icon} alt="icons" />
-                        </i>
-                        <span className="adm-item-name">{item.name}</span>
-                    </div>
+                        <div className="adm-sidebar-item">
+                            <i>
+                                <img src={item.icon} alt={item.name} className="adm-nav-icon" />
+                            </i>
+                            <span className="adm-item-name">{item.name}</span>
+                        </div>
+                    </NavLink>
                 ))}
             </nav>
 
             <div className="adm-sidebar-footer">
-                <i className="fas fa-chevron-left">
+                <i>
                     <img src={side} alt="close-icon" />
                 </i>
             </div>

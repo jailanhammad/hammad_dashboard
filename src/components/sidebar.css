@@ -57,6 +57,10 @@
     transition: 0.2s;
     
 }
+.adm-item-name{
+    text-decoration: none;
+
+}
 
 .adm-sidebar-item i {
     font-size: 18px;
@@ -66,6 +70,8 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+    text-decoration: none;
+
 }
 
 .adm-sidebar-item:hover {
@@ -107,4 +113,32 @@
     .adm-sidebar {
         width: 60px;
     }
+}
+.adm-sidebar-link {
+    text-decoration: none;
+    display: block;
+}
+
+.adm-sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 4px 15px;
+    border-radius: 12px;
+    color: #a1a1a1; 
+    transition: 0.3s all ease;
+}
+
+.adm-sidebar-link.is-active .adm-sidebar-item {
+    background-color: #dc2626 !important; 
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.adm-sidebar-link.is-active .adm-nav-icon {
+    filter: brightness(0) invert(1);
+}
+
+.adm-sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
