@@ -23,7 +23,7 @@ const Sidebar = () => {
         { name: 'Mobile App', icon: app, path: '/mobile-app' },
         { name: 'Vehicles', icon: car, path: '/vehicles' },
         { name: 'Brands', icon: brands, path: '/brands' },
-        { name: 'Test Drives', icon: test, path: '/test-drives' },
+        { name: 'Test Drives', icon: test, path: '/test-drive' },
         { name: 'Installments', icon: installments, path: '/installments' },
         { name: 'Sell Requests', icon: sell, path: '/sell-requests' },
         { name: 'Reviews', icon: reviews, path: '/reviews' },
