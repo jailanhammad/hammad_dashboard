@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './sidebar.css';
 import logo from '../assets/home/logo.svg';
 import dash from '../assets/home/dash2.svg';
