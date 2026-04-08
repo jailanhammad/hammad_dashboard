@@ -8,6 +8,7 @@ import TestDrive from './pages/testdrive';
 import Installments from './pages/installments';
 import Sell from './pages/Sell';
 import Reviews from './pages/reviews';
+import Notifications from './pages/notifications';
 
 
 const RoutingApp = () => {
@@ -18,12 +19,13 @@ const RoutingApp = () => {
                 <Route path="/website" element={<Website />} />
                 <Route path="/mobile-app" element={<App />} />
                 <Route path="/vehicles" element={<Vehicles />} />
+                <Route path="/brands" element={<Vehicles />} />
                 <Route path="/test-drive" element={<TestDrive />} />
                 <Route path="/installments" element={<Installments />} />
                 <Route path="/sell-requests" element={<Sell />} />
                 <Route path="/reviews" element={<Reviews />} />
-                {/* <Route path="/notifications" element={<Notifications />} />
-                <Route path="/settings" element={<Settings />} /> */}
+                <Route path="/notifications" element={<Notifications />} />
+                {/* <Route path="/settings" element={<Settings />} /> */}
 
 
 
