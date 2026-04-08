@@ -6,6 +6,7 @@ import App from './pages/app';
 import Vehicles from './pages/vehicles';
 import TestDrive from './pages/testdrive';
 import Installments from './pages/installments';
+import Sell from './pages/Sell';
 
 
 const RoutingApp = () => {
@@ -18,6 +19,7 @@ const RoutingApp = () => {
                 <Route path="/vehicles" element={<Vehicles />} />
                 <Route path="/test-drive" element={<TestDrive />} />
                 <Route path="/installments" element={<Installments />} />
+                <Route path="/sell-requests" element={<Sell />} />
 
 
 
