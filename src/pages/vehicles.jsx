@@ -8,10 +8,8 @@ import VehiclesManage from '../components/vehiclesmanage.jsx';
 const Vehicles = () => {
   return ( 
     <>
-
-    
-    
-        
+ 
+         
     <div className="adm-layout">
             <Sidebar />
 
@@ -28,9 +26,6 @@ const Vehicles = () => {
                 </main>
             </div>
     </div>
-    
-    
-    
     
     
     

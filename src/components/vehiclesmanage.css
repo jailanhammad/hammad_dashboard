@@ -79,3 +79,319 @@
     .hm-add-btn { width: 100%; }
     .hm-section-top { flex-direction: column; gap: 15px; }
   }
+
+.hm-car-cell img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.hm-car-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 250px;
+}
+
+.hm-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.hm-badge.available {
+  background: rgba(0, 255, 127, 0.1);
+  color: #00ff7f;
+  border: 1px solid rgba(0, 255, 127, 0.3);
+}
+
+.hm-badge.sold {
+  background: rgba(255, 71, 71, 0.1);
+  color: #ED1C24;
+  border: 1px solid rgba(255, 71, 71, 0.3);
+}
+
+.hm-table-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+.hm-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  color: white;
+}
+
+.hm-form-grid input, .hm-form-grid select {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.hm-form-grid input:focus {
+  border-color: #ED1C24; 
+}
+
+.hm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hm-modal-content {
+  background: #111; 
+  padding: 30px;
+  border-radius: 12px;
+  width: 500px;
+  border: 1px solid #333;
+}
+
+.hm-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hm-save-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #ED1C24; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hm-glass-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.hm-chic-modal {
+  background: #1a1a1a;
+  width: 100%;
+  max-width: 650px;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.hm-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.header-text h2 {
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+}
+
+.header-text p {
+  color: #888;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.hm-close-chic {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hm-close-chic:hover { color: #ED1C24; }
+
+.hm-chic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-field label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.input-field input, .input-field select {
+  background: #252525;
+  border: 1px solid #333;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-field input:focus {
+  border-color: #ED1C24;
+  background: #2a2a2a;
+  box-shadow: 0 0 0 4px rgba(255, 71, 71, 0.1);
+}
+
+.hm-gradient-btn {
+  margin-top: 10px;
+  background: linear-gradient(135deg, #ff4747 0%, #b32d2d 100%);
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hm-gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 71, 71, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hm-edit-container {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hm-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.hm-edit-header h1 {
+  font-size: 32px;
+  color: #fff;
+  margin: 0;
+}
+
+.hm-back-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hm-back-btn:hover {
+  background: #ED1C24;
+  border-color: #ED1C24;
+}
+
+.hm-chic-card {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hm-chic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.input-field label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 700;
+}
+
+.input-field input, .input-field select {
+  width: 100%;
+  background: #222;
+  border: 1px solid #333;
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-field input:focus {
+  border-color: #ED1C24;
+  background: #282828;
+  box-shadow: 0 0 0 4px rgba(255, 71, 71, 0.1);
+}
+
+.hm-gradient-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ED1C24 0%, #ED1C24 100%);
+  color: white;
+  padding: 18px;
+  border: none;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hm-gradient-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(255, 71, 71, 0.3);
+}

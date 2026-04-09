@@ -10,6 +10,7 @@ import Sell from './pages/Sell';
 import Reviews from './pages/reviews';
 import Notifications from './pages/notifications';
 import Settings from './pages/settings';
+import VehicleEdit from './components/vehicleedit';
 
 
 const RoutingApp = () => {
@@ -28,6 +29,7 @@ const RoutingApp = () => {
                 <Route path="/reviews" element={<Reviews />} />
                 <Route path="/notifications" element={<Notifications />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/admin/edit/:id" element={<VehicleEdit />} />
 
             </Routes>
         </Router>
