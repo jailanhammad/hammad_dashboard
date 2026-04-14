@@ -313,3 +313,89 @@
 }
 
 .btn-delete:hover { filter: grayscale(0); }
+
+.admin-field-input-box {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    padding: 12px;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 5px;
+    outline: none;
+}
+
+.admin-field-input-box:focus {
+    border-color: #dc2626;
+}
+.cta-management-section {
+    margin-top: 30px;
+}
+
+.cta-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cta-admin-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #222;
+}
+
+.cta-card-type {
+    color: #dc2626;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cta-update-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.admin-field-input-box {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    padding: 12px;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 5px;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+.admin-field-input-box:focus {
+    border-color: #dc2626;
+}
+
+@media (max-width: 768px) {
+    .cta-grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+.cta-management-section {
+    margin-top: 50px !important; 
+    margin-bottom: 30px;
+}
+
+.cta-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; 
+    margin-top: 20px; 
+}
+
+.cta-admin-card {
+    background: #111;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #222;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+}
+

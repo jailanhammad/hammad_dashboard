@@ -150,6 +150,26 @@ const [newDef, setNewDef] = useState({
 });
 
 
+const [ctaContent, setCtaContent] = useState([]);
+
+const fetchCTA = async () => {
+    const { data } = await supabase.from('home_cta_sections').select('*').order('type', { ascending: true });
+    if (data) setCtaContent(data);
+};
+
+const updateCtaCard = async (index) => {
+    const card = ctaContent[index];
+    const { error } = await supabase.from('home_cta_sections').update(card).eq('id', card.id);
+    if (!error) alert('Updated Successfully');
+};
+
+useEffect(() => {
+    fetchContent();
+    fetchCarDefinitions();
+    fetchCTA();
+}, []);
+
+
     return (
         <div className="admin-dashboard-wrapper" dir="ltr">
             <div className="admin-header-box">
@@ -221,9 +241,9 @@ const [newDef, setNewDef] = useState({
                             <img src={content.image_url} alt="Hero BG" style={{ width: '250px', borderRadius: '12px', border: '1px solid #333' }} />
                             <button 
                                 onClick={handleDeleteImage}
-                                style={{ position: 'absolute', top: '10px', right: '10px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', padding: '5px 10px' }}
+                                style={{ position: 'absolute', left: '100px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', padding: '5px 40px' }}
                             >
-                                Delete 🗑️
+                                Delete 
                             </button>
                         </div>
                     ) : (
@@ -304,6 +324,68 @@ const [newDef, setNewDef] = useState({
         </table>
     </div>
 </div>
+
+
+<div className="admin-content-card cta-management-section">
+    <h2 className="admin-card-header">3. Home CTA Sections (Buy/Sell)</h2>
+    <div className="cta-grid-container">
+        {ctaContent.map((cta, index) => (
+            <div key={cta.id} className="cta-admin-card">
+                <h4 className="cta-card-type">
+                    {cta.type === 'buy' ? 'Left Card' : 'Right Card'}
+                </h4>
+                
+                <div className="admin-field-container">
+                    <label>Title ({lang.toUpperCase()})</label>
+                    <input 
+                        className="admin-field-input-box" 
+                        value={lang === 'en' ? cta.title_en : cta.title_ar} 
+                        onChange={(e) => {
+                            const newData = [...ctaContent];
+                            newData[index][lang === 'en' ? 'title_en' : 'title_ar'] = e.target.value;
+                            setCtaContent(newData);
+                        }}
+                    />
+                </div>
+
+                <div className="admin-field-container">
+                    <label>Description ({lang.toUpperCase()})</label>
+                    <textarea 
+                        className="admin-field-input-box" 
+                        rows="3"
+                        value={lang === 'en' ? cta.sub_title_en : cta.sub_title_ar} 
+                        onChange={(e) => {
+                            const newData = [...ctaContent];
+                            newData[index][lang === 'en' ? 'sub_title_en' : 'sub_title_ar'] = e.target.value;
+                            setCtaContent(newData);
+                        }}
+                    />
+                </div>
+
+                <div className="admin-field-container">
+                    <label>Button Link</label>
+                    <input 
+                        className="admin-field-input-box" 
+                        value={cta.btn_link} 
+                        onChange={(e) => {
+                            const newData = [...ctaContent];
+                            newData[index].btn_link = e.target.value;
+                            setCtaContent(newData);
+                        }}
+                    />
+                </div>
+
+                <button 
+                    onClick={() => updateCtaCard(index)} 
+                    className="admin-btn-save cta-update-btn"
+                >
+                    Update {cta.type === 'buy' ? 'Buy' : 'Sell'} Card
+                </button>
+            </div>
+        ))}
+    </div>
+</div>
+
 
 
             

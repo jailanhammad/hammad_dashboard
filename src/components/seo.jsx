@@ -52,12 +52,12 @@ const Seo = () => {
         </div>
 
         <div class="seo-actions">
-            <button class="btn btn-edit">
+            <button class="btn btn-edit-00">
                 Edit SEO <span>
                 <img src={edit} alt="edit-icon" className='edit-icon' />
                 </span>
             </button>
-            <button class="btn btn-delete">
+            <button class="btn btn-delete-00">
                 Delete SEO <span></span>
                 <img src={deletee} alt="edit-icon" className='edit-icon' />
             </button>
