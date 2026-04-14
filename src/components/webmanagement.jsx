@@ -6,12 +6,11 @@ const WebManagement = () => {
     const [loading, setLoading] = useState(false);
     const [lang, setLang] = useState('en'); 
     const [content, setContent] = useState({
-        hero_title_en: '',
-        hero_title_ar: '',
-        hero_desc_en: '',
-        hero_desc_ar: '',
-        cta_text_en: '',
-        cta_text_ar: '',
+        title_en: '',
+        title_ar: '',
+        description_en: '',
+        description_ar: '',
+        image_url: ''
     });
 
     useEffect(() => {
@@ -20,32 +19,139 @@ const WebManagement = () => {
 
     const fetchContent = async () => {
         const { data, error } = await supabase
-            .from('website_content')
+            .from('website_sections')
             .select('*')
+            .eq('section_key', 'hero_section')
             .single(); 
 
-        if (data) setContent(data);
+        if (data) {
+            setContent({
+                title_en: data.title_en || '',
+                title_ar: data.title_ar || '',
+                description_en: data.description_en || '',
+                description_ar: data.description_ar || '',
+                image_url: data.image_url || ''
+            });
+        }
         if (error) console.error('Error fetching data:', error);
     };
 
-    const handleSave = async () => {
+    const handleImageUpload = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        setLoading(true);
+        const fileExt = file.name.split('.').pop();
+        const fileName = `hero_${Date.now()}.${fileExt}`;
+        const filePath = `hero-images/${fileName}`;
+
+        let { error: uploadError } = await supabase.storage
+            .from('images')
+            .upload(filePath, file);
+
+        if (uploadError) {
+            alert('Error uploading image!');
+            setLoading(false);
+            return;
+        }
+
+        const { data: { publicUrl } } = supabase.storage
+            .from('images')
+            .getPublicUrl(filePath);
+
+        const { error: updateError } = await supabase
+            .from('website_sections')
+            .update({ image_url: publicUrl })
+            .eq('section_key', 'hero_section');
+
+        if (!updateError) {
+            setContent({ ...content, image_url: publicUrl });
+            alert('Image uploaded and saved! ✅');
+        }
+        setLoading(false);
+    };
+
+    const handleDeleteImage = async () => {
+        if (!window.confirm("Are you sure you want to remove the image?")) return;
+        
         setLoading(true);
         const { error } = await supabase
-            .from('website_content')
-            .update(content)
-            .eq('id', 1); 
+            .from('website_sections')
+            .update({ image_url: null })
+            .eq('section_key', 'hero_section');
 
         if (!error) {
-            alert('Changes saved successfully! ✅');
+            setContent({ ...content, image_url: '' });
+            alert('Image removed! 🗑️');
+        }
+        setLoading(false);
+    };
+
+    const handleSaveStrings = async () => {
+        setLoading(true);
+        const { error } = await supabase
+            .from('website_sections')
+            .update({
+                title_en: content.title_en,
+                title_ar: content.title_ar,
+                description_en: content.description_en,
+                description_ar: content.description_ar,
+            })
+            .eq('section_key', 'hero_section'); 
+
+        if (!error) {
+            alert('Text updated successfully! ✅');
         } else {
             alert('Error saving data! ❌');
         }
         setLoading(false);
     };
 
+
+const fetchCarDefinitions = async () => {
+    const { data } = await supabase.from('car_definitions').select('*');
+    if (data) setCarDefs(data);
+};
+
+const addDefinition = async () => {
+    if (!newDef.make_en || !newDef.model_en) return alert("Please fill at least English fields");
+    
+    const { error } = await supabase.from('car_definitions').insert([newDef]);
+    
+    if (!error) {
+        fetchCarDefinitions(); 
+        setNewDef({ make_en: '', make_ar: '', model_en: '', model_ar: '' }); 
+        alert("New Brand/Model Added! 🚗");
+    } else {
+        alert(error.message);
+    }
+};
+
+const deleteDefinition = async (id) => {
+    if (window.confirm("Delete this definition?")) {
+        const { error } = await supabase.from('car_definitions').delete().eq('id', id);
+        if (!error) fetchCarDefinitions();
+    }
+};
+
+useEffect(() => {
+    fetchContent();
+    fetchCarDefinitions(); 
+}, []);
+
+
+const [carDefs, setCarDefs] = useState([]);
+
+const [newDef, setNewDef] = useState({ 
+    make_en: '', 
+    make_ar: '', 
+    model_en: '', 
+    model_ar: '' 
+});
+
+
     return (
-     
-<div className="admin-dashboard-wrapper" dir="ltr">
+        <div className="admin-dashboard-wrapper" dir="ltr">
             <div className="admin-header-box">
                 <div>
                     <h1 className="admin-main-title">Website Content Management</h1>
@@ -53,27 +159,16 @@ const WebManagement = () => {
                 </div>
                 
                 <div className="admin-tabs-list" style={{ marginBottom: '10px' }}>
-                    <button 
-                        onClick={() => setLang('en')}
-                        className={`admin-tab-item ${lang === 'en' ? 'is-active' : ''}`}>EN</button>
-                    <button 
-                        onClick={() => setLang('ar')}
-                        className={`admin-tab-item ${lang === 'ar' ? 'is-active' : ''}`}>AR</button>
+                    <button onClick={() => setLang('en')} className={`admin-tab-item ${lang === 'en' ? 'is-active' : ''}`}>EN</button>
+                    <button onClick={() => setLang('ar')} className={`admin-tab-item ${lang === 'ar' ? 'is-active' : ''}`}>AR</button>
                 </div>
             </div>
 
             <div className="admin-tabs-list">
                 {['Home Page', 'About Us', 'Contact', 'Gallery', 'Services'].map((tab) => (
-                    <button 
-                        key={tab} 
-                        className={`admin-tab-item ${tab === 'Home Page' ? 'is-active' : ''}`}>
-                        {tab}
-                    </button>
+                    <button key={tab} className={`admin-tab-item ${tab === 'Home Page' ? 'is-active' : ''}`}>{tab}</button>
                 ))}
-                
-                <button className="admin-tab-add-btn">
-                    Add Page +
-                </button>
+                <button className="admin-tab-add-btn">Add Page +</button>
             </div>
 
             <div className="admin-content-card">
@@ -92,10 +187,10 @@ const WebManagement = () => {
                         <input 
                             className="admin-field-input"
                             type="text"
-                            value={lang === 'en' ? content.hero_title_en : content.hero_title_ar}
+                            value={lang === 'en' ? content.title_en : content.title_ar}
                             onChange={(e) => setContent({
                                 ...content, 
-                                [lang === 'en' ? 'hero_title_en' : 'hero_title_ar']: e.target.value
+                                [lang === 'en' ? 'title_en' : 'title_ar']: e.target.value
                             })}
                             placeholder="Enter title here..."
                         />
@@ -108,10 +203,10 @@ const WebManagement = () => {
                         <textarea 
                             className="admin-field-area"
                             rows="4"
-                            value={lang === 'en' ? content.hero_desc_en : content.hero_desc_ar}
+                            value={lang === 'en' ? content.description_en : content.description_ar}
                             onChange={(e) => setContent({
                                 ...content, 
-                                [lang === 'en' ? 'hero_desc_en' : 'hero_desc_ar']: e.target.value
+                                [lang === 'en' ? 'description_en' : 'description_ar']: e.target.value
                             })}
                             placeholder="Enter description here..."
                         />
@@ -120,15 +215,34 @@ const WebManagement = () => {
 
                 <div className="admin-field-container">
                     <label className="admin-field-label">Hero Background Image</label>
-                    <div className="admin-upload-dropzone">
-                        <div style={{ fontSize: '30px', marginBottom: '10px' }}>🖼️</div>
-                        <p>Click to upload or drag and drop</p>
-                    </div>
+                    
+                    {content.image_url ? (
+                        <div className="admin-image-preview" style={{ position: 'relative', width: 'fit-content' }}>
+                            <img src={content.image_url} alt="Hero BG" style={{ width: '250px', borderRadius: '12px', border: '1px solid #333' }} />
+                            <button 
+                                onClick={handleDeleteImage}
+                                style={{ position: 'absolute', top: '10px', right: '10px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', padding: '5px 10px' }}
+                            >
+                                Delete 🗑️
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="admin-upload-dropzone" style={{ position: 'relative' }}>
+                            <input 
+                                type="file" 
+                                accept="image/*" 
+                                onChange={handleImageUpload} 
+                                style={{ position: 'absolute', width: '100%', height: '100%', opacity: 0, cursor: 'pointer' }}
+                            />
+                            <div style={{ fontSize: '30px', marginBottom: '10px' }}>🖼️</div>
+                            <p>{loading ? 'Processing...' : 'Click to upload Hero Image'}</p>
+                        </div>
+                    )}
                 </div>
 
                 <div className="admin-btn-group">
                     <button 
-                        onClick={handleSave}
+                        onClick={handleSaveStrings}
                         disabled={loading}
                         className="admin-btn-save">
                         {loading ? 'Saving...' : '💾 Save Changes'}
@@ -136,10 +250,64 @@ const WebManagement = () => {
                     <button className="admin-btn-preview">Preview</button>
                 </div>
             </div>
+
+
+<div className="admin-content-card" style={{ marginTop: '30px' }}>
+    <h2 className="admin-card-header">2. Search Bar Settings (Makes & Models)</h2>
+    
+    <div className="admin-input-grid">
+        <input 
+            placeholder="Make (EN)" 
+            value={newDef.make_en} 
+            onChange={e => setNewDef({...newDef, make_en: e.target.value})} 
+        />
+        <input 
+            placeholder="Make (AR)" 
+            value={newDef.make_ar} 
+            onChange={e => setNewDef({...newDef, make_ar: e.target.value})} 
+        />
+        <input 
+            placeholder="Model (EN)" 
+            value={newDef.model_en} 
+            onChange={e => setNewDef({...newDef, model_en: e.target.value})} 
+        />
+        <input 
+            placeholder="Model (AR)" 
+            value={newDef.model_ar} 
+            onChange={e => setNewDef({...newDef, model_ar: e.target.value})} 
+        />
+        <button onClick={addDefinition} className="admin-btn-add">Add +</button>
+    </div>
+
+    <div className="admin-table-container">
+        <table className="admin-table">
+            <thead>
+                <tr>
+                    <th>Make (EN/AR)</th>
+                    <th>Model (EN/AR)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {carDefs.map(def => (
+                    <tr key={def.id}>
+                        <td>{def.make_en} / {def.make_ar}</td>
+                        <td>{def.model_en} / {def.model_ar}</td>
+                        <td>
+                            <button onClick={() => deleteDefinition(def.id)} className="btn-delete">
+                                🗑️
+                            </button>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+            
         </div>
-
-
-
     );
 };
 
