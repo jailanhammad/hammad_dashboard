@@ -11,14 +11,16 @@ import Reviews from './pages/reviews';
 import Notifications from './pages/notifications';
 import Settings from './pages/settings';
 import VehicleEdit from './components/vehicleedit';
+import Login from './pages/login';
 
 
 const RoutingApp = () => {
     return (
         <Router>
             <Routes>
-                
-                <Route path="/" element={<Home />} />
+
+                <Route path="/" element={<Login />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/website" element={<Website />} />
                 <Route path="/mobile-app" element={<App />} />
                 <Route path="/vehicles" element={<Vehicles />} />
