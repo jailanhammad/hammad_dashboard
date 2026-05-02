@@ -75,18 +75,14 @@ const Login = () => {
                     </div>
 
                     <div className="hml-form-options">
-                        <label><input type="checkbox" /> Remember me</label>
+                        <label><input type="checkbox" className='remember' /> Remember</label>
                         <a href="#forgot">Forgot Password?</a>
                     </div>
 
                     <button type="submit" className="hml-login-btn" disabled={loading}>                
-                        {loading ? 'جارٍ التحقق...' : 'Login'}
+                        {loading ? 'Verifying...' : 'Login'}
                     </button>
                 </form>
-
-                <div className="hml-login-footer">
-                    <p>Don't have an account? <a href="#signup">Register Now</a></p>
-                </div>
             </div>
         </div>
     );

@@ -5,6 +5,7 @@ import search from '../assets/home/search.svg';
 import noti from '../assets/home/noti.svg';
 import profile from '../assets/home/profile.svg';
 import menu from '../assets/home/menu.svg';
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -70,11 +71,14 @@ const Header = () => {
                         <span className="adm-name">{adminName}</span>
                         <span className="adm-name-2">{adminEmail}</span>
                     </div>
+                    <NavLink to="/" >
                     <div className="adm-avatar-red">
                         <i className="fas fa-user">
                             <img src={profile} alt="profile-icon" />
                         </i>
                     </div>
+                    </NavLink>
+
                 </div>
             </header>
         </>
