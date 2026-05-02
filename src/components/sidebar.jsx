@@ -12,11 +12,10 @@ import sell from '../assets/home/panel-icon-8.svg';
 import reviews from '../assets/home/panel-icon-9.svg';
 import notifications from '../assets/home/panel-icon-10.svg';
 import settings from '../assets/home/panel-icon-11.svg';
-import side from '../assets/home/panel-icon-12.svg';
 import { NavLink } from "react-router-dom";
 
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
     const menuItems = [
         { name: 'Dashboard', icon: dash, path: '/home' },
         { name: 'Website', icon: web, path: '/website' },
@@ -32,40 +31,47 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className="adm-sidebar">
-            <div className="adm-sidebar-header">
-                <div className="adm-logo-icon">
-                    <img src={logo} alt="logo" />
-                </div>
-                <div className="adm-logo-text">
-                    <h2>HAMMAD MOTORS</h2>
-                    <span>Admin Panel</span>
-                </div>
-            </div>
+        <>
+            <div
+                className={`adm-sidebar-overlay ${isOpen ? 'adm-sidebar-overlay--visible' : ''}`}
+                onClick={onClose}
+                aria-hidden="true"
+            />
 
-            <nav className="adm-sidebar-nav">
-                {menuItems.map((item) => (
-                    <NavLink 
-                        key={item.name}
-                        to={item.path} 
-                        className={({ isActive }) => `adm-sidebar-link ${isActive ? 'is-active' : ''}`}
-                    >
-                        <div className="adm-sidebar-item">
-                            <i>
-                                <img src={item.icon} alt={item.name} className="adm-nav-icon" />
-                            </i>
-                            <span className="adm-item-name">{item.name}</span>
-                        </div>
-                    </NavLink>
-                ))}
-            </nav>
+            <aside className={`adm-sidebar ${isOpen ? 'adm-sidebar--open' : ''}`}>
+                <div className="adm-sidebar-header">
+                    <div className="adm-logo-icon">
+                        <img src={logo} alt="logo" />
+                    </div>
+                    <div className="adm-logo-text">
+                        <h2>HAMMAD MOTORS</h2>
+                        <span>Admin Panel</span>
+                    </div>
+                </div>
 
-            <div className="adm-sidebar-footer">
-                <i>
-                    <img src={side} alt="close-icon" />
-                </i>
-            </div>
-        </aside>
+                <div className="adm-sidebar-footer"></div>
+
+                <nav className="adm-sidebar-nav">
+                    {menuItems.map((item) => (
+                        <NavLink
+                            key={item.name}
+                            to={item.path}
+                            className={({ isActive }) => `adm-sidebar-link ${isActive ? 'is-active' : ''}`}
+                            onClick={onClose}
+                        >
+                            <div className="adm-sidebar-item">
+                                <i>
+                                    <img src={item.icon} alt={item.name} className="adm-nav-icon" />
+                                </i>
+                                <span className="adm-item-name">{item.name}</span>
+                            </div>
+                        </NavLink>
+                    ))}
+                </nav>
+
+             
+            </aside>
+        </>
     );
 };
 

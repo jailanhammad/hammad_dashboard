@@ -14,10 +14,7 @@
 }
 
 .admin-dashboard-wrapper {
-    background-color: var(--admin-bg-color);
     padding: 40px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
     border-radius: 20px;
     min-height: 100vh;
     color: white;
@@ -49,7 +46,7 @@
     border: 1px solid var(--admin-border);
     border-radius: 12px;
     padding: 30px;
-    max-width: 1000px;
+    max-width: 1400px;
 }
 
 .admin-card-header {

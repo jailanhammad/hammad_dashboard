@@ -1,44 +1,49 @@
+
 .adm-dashboard-view {
     width: 100%;
-    padding: 30px;
+    padding: 1.875rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 1.875rem;
     color: white;
 }
 
 .adm-view-header h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
 }
 
 .adm-view-header p {
     color: #666;
-    font-size: 15px;
+    font-size: 0.9375rem;
+    margin: 0;
 }
 
 .adm-charts-grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr; 
-    gap: 20px;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.25rem;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .adm-chart-card {
     background: #111111;
     border: 1px solid #222;
-    border-radius: 20px;
-    padding: 24px;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .adm-chart-card h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     margin: 0;
 }
@@ -54,33 +59,42 @@
 .placeholder-chart img {
     width: 100%;
     height: auto;
-    object-fit: contain; 
+    object-fit: contain;
 }
+
+
 
 @media (max-width: 1024px) {
     .adm-dashboard-view {
-        padding: 20px;
-        margin-left: 70px; 
-        width: calc(100% - 70px);
+        padding: 1.25rem;
+        gap: 1.25rem;
     }
 
     .adm-charts-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 }
-
 @media (max-width: 768px) {
     .adm-dashboard-view {
-        padding: 15px;
-        margin-left: 65px; 
-        width: calc(100% - 65px);
+        padding: 0.9375rem;
+        gap: 1rem;
     }
 
     .adm-view-header h1 {
-        font-size: 22px; 
+        font-size: 1.375rem;
     }
 
     .adm-chart-card {
-        padding: 15px;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .adm-dashboard-view {
+        padding: 0.75rem;
+    }
+
+    .adm-view-header h1 {
+        font-size: 1.25rem;
     }
 }

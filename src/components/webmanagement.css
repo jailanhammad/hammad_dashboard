@@ -13,15 +13,18 @@
     --btn-gray: #252525;
 }
 
+
 .admin-dashboard-wrapper {
-    background-color: var(--admin-bg-color);
-    padding: 40px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
+    color: #fff !important;
+    padding: 40px !important;
     min-height: 100vh;
-    color: white;
+    width: 100%; 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 40px;
+    
 }
+
 
 .admin-main-title { font-size: 28px; margin: 0; }
 .admin-sub-text { color: #a1a1a1; margin-top: 5px; margin-bottom: 25px; }
@@ -49,7 +52,7 @@
     border: 1px solid var(--admin-border);
     border-radius: 12px;
     padding: 30px;
-    max-width: 1000px;
+    max-width: 1400px;
 }
 
 .admin-card-header {
@@ -378,6 +381,38 @@
     .cta-grid-container {
         grid-template-columns: 1fr;
     }
+
+    .admin-dashboard-wrapper {
+        padding: 1rem !important;
+    }
+
+    .admin-input-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .admin-tabs-list {
+        flex-wrap: wrap;
+    }
+
+    .admin-btn-group {
+        flex-direction: column;
+    }
+
+    .admin-btn-save,
+    .admin-btn-preview {
+        flex: unset;
+        width: 100%;
+    }
+
+    .admin-btn-preview {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-input-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
 .cta-management-section {
     margin-top: 50px !important; 
@@ -399,3 +434,66 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
 }
 
+
+
+.cta-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cta-admin-card {
+    background: #111;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #222;
+    width: 100%; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-field-input-box {
+    width: 100% !important;
+    background: #000;
+    border: 1px solid #333;
+    padding: 12px;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 5px;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+@media (max-width: 768px) {
+    .admin-dashboard-wrapper {
+        padding: 15px !important;
+    }
+
+    .cta-grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .admin-main-title {
+        font-size: 24px !important; 
+    }
+
+    .cta-admin-card {
+        padding: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-btn-save, .admin-btn-preview {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-bottom: 10px;
+    }
+    
+    .admin-btn-group {
+        flex-direction: column;
+    }
+}
