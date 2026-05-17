@@ -3,6 +3,11 @@ import './webmanagement.css';
 import { supabase } from '../supabase'; 
 import FeaturedManager from './featuredmanager';
 import BrowseManager from './browsemanager';
+import GalleryManager from './gallerymanager';
+import WhyUsManager from './whyusmanager';
+import ReviewsManager from './reviewsmanager';
+import FooterManager from './footermanager';
+import NavManager from './navmanager';
 
 const WebManagement = () => {
     const [loading, setLoading] = useState(false);
@@ -175,6 +180,7 @@ useEffect(() => {
     return (
         <div className="admin-dashboard-wrapper" dir="ltr">
 
+
             <div className="admin-header-box">
                 <div>
                     <h1 className="admin-main-title">Website Content Management</h1>
@@ -193,6 +199,8 @@ useEffect(() => {
                 ))}
                 <button className="admin-tab-add-btn">Add Page +</button>
             </div>
+            
+            <NavManager />
 
             <div className="admin-content-card">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
@@ -391,6 +399,11 @@ useEffect(() => {
 
             <FeaturedManager />
             <BrowseManager />
+            <GalleryManager />
+            <WhyUsManager />
+            <ReviewsManager />
+            <FooterManager />
+
 
             
         </div>
