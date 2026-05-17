@@ -1,0 +1,183 @@
+.manager-container {
+    padding: 24px;
+    background-color: #0b0b0b;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.manager-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.manager-header p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.manager-form {
+    background-color: #161616;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.form-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.form-row.full-width {
+    display: block;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.form-group input, .form-group select {
+    background-color: #222222;
+    border: 1px solid #2d2d2d;
+    padding: 14px 16px;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #e31b23;
+    outline: none;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.save-btn {
+    background-color: #e31b23;
+    color: #fff;
+    border: none;
+    padding: 14px 40px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.save-btn:hover {
+    background-color: #b81218;
+}
+
+.back-btn {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 14px 25px;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.inventory-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.table-responsive {
+    background-color: #161616;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.inventory-table th {
+    background-color: #161616;
+    padding: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #222;
+}
+
+.inventory-table td {
+    padding: 16px;
+    border-bottom: 1px solid #222;
+    font-size: 14px;
+    color: #ddd;
+    vertical-align: middle;
+}
+
+.vehicle-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cell-img {
+    width: 55px;
+    height: 38px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.vehicle-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-title {
+    font-weight: 600;
+    color: #fff;
+}
+
+.car-id {
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+}
+
+.price-cell {
+    font-weight: 600;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-edit-btn, .icon-delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    transition: transform 0.1s;
+}
+
+.icon-edit-btn:hover, .icon-delete-btn:hover {
+    transform: scale(1.15);
+}

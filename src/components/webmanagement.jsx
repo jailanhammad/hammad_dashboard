@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './webmanagement.css';
 import { supabase } from '../supabase'; 
+import FeaturedManager from './featuredmanager';
+import BrowseManager from './browsemanager';
 
 const WebManagement = () => {
     const [loading, setLoading] = useState(false);
@@ -172,6 +174,7 @@ useEffect(() => {
 
     return (
         <div className="admin-dashboard-wrapper" dir="ltr">
+
             <div className="admin-header-box">
                 <div>
                     <h1 className="admin-main-title">Website Content Management</h1>
@@ -272,121 +275,122 @@ useEffect(() => {
             </div>
 
 
-<div className="admin-content-card" style={{ marginTop: '30px' }}>
-    <h2 className="admin-card-header">2. Search Bar Settings (Makes & Models)</h2>
-    
-    <div className="admin-input-grid">
-        <input 
-            placeholder="Make (EN)" 
-            value={newDef.make_en} 
-            onChange={e => setNewDef({...newDef, make_en: e.target.value})} 
-        />
-        <input 
-            placeholder="Make (AR)" 
-            value={newDef.make_ar} 
-            onChange={e => setNewDef({...newDef, make_ar: e.target.value})} 
-        />
-        <input 
-            placeholder="Model (EN)" 
-            value={newDef.model_en} 
-            onChange={e => setNewDef({...newDef, model_en: e.target.value})} 
-        />
-        <input 
-            placeholder="Model (AR)" 
-            value={newDef.model_ar} 
-            onChange={e => setNewDef({...newDef, model_ar: e.target.value})} 
-        />
-        <button onClick={addDefinition} className="admin-btn-add">Add +</button>
-    </div>
-
-    <div className="admin-table-container">
-        <table className="admin-table">
-            <thead>
-                <tr>
-                    <th>Make (EN/AR)</th>
-                    <th>Model (EN/AR)</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {carDefs.map(def => (
-                    <tr key={def.id}>
-                        <td>{def.make_en} / {def.make_ar}</td>
-                        <td>{def.model_en} / {def.model_ar}</td>
-                        <td>
-                            <button onClick={() => deleteDefinition(def.id)} className="btn-delete">
-                                🗑️
-                            </button>
-                        </td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-<div className="admin-content-card cta-management-section">
-    <h2 className="admin-card-header">3. Home CTA Sections (Buy/Sell)</h2>
-    <div className="cta-grid-container">
-        {ctaContent.map((cta, index) => (
-            <div key={cta.id} className="cta-admin-card">
-                <h4 className="cta-card-type">
-                    {cta.type === 'buy' ? 'Left Card' : 'Right Card'}
-                </h4>
+            <div className="admin-content-card" style={{ marginTop: '30px' }}>
+                <h2 className="admin-card-header">2. Search Bar Settings (Makes & Models)</h2>
                 
-                <div className="admin-field-container">
-                    <label>Title ({lang.toUpperCase()})</label>
+                <div className="admin-input-grid">
                     <input 
-                        className="admin-field-input-box" 
-                        value={lang === 'en' ? cta.title_en : cta.title_ar} 
-                        onChange={(e) => {
-                            const newData = [...ctaContent];
-                            newData[index][lang === 'en' ? 'title_en' : 'title_ar'] = e.target.value;
-                            setCtaContent(newData);
-                        }}
+                        placeholder="Make (EN)" 
+                        value={newDef.make_en} 
+                        onChange={e => setNewDef({...newDef, make_en: e.target.value})} 
                     />
-                </div>
-
-                <div className="admin-field-container">
-                    <label>Description ({lang.toUpperCase()})</label>
-                    <textarea 
-                        className="admin-field-input-box" 
-                        rows="3"
-                        value={lang === 'en' ? cta.sub_title_en : cta.sub_title_ar} 
-                        onChange={(e) => {
-                            const newData = [...ctaContent];
-                            newData[index][lang === 'en' ? 'sub_title_en' : 'sub_title_ar'] = e.target.value;
-                            setCtaContent(newData);
-                        }}
-                    />
-                </div>
-
-                <div className="admin-field-container">
-                    <label>Button Link</label>
                     <input 
-                        className="admin-field-input-box" 
-                        value={cta.btn_link} 
-                        onChange={(e) => {
-                            const newData = [...ctaContent];
-                            newData[index].btn_link = e.target.value;
-                            setCtaContent(newData);
-                        }}
+                        placeholder="Make (AR)" 
+                        value={newDef.make_ar} 
+                        onChange={e => setNewDef({...newDef, make_ar: e.target.value})} 
                     />
+                    <input 
+                        placeholder="Model (EN)" 
+                        value={newDef.model_en} 
+                        onChange={e => setNewDef({...newDef, model_en: e.target.value})} 
+                    />
+                    <input 
+                        placeholder="Model (AR)" 
+                        value={newDef.model_ar} 
+                        onChange={e => setNewDef({...newDef, model_ar: e.target.value})} 
+                    />
+                    <button onClick={addDefinition} className="admin-btn-add">Add +</button>
                 </div>
 
-                <button 
-                    onClick={() => updateCtaCard(index)} 
-                    className="admin-btn-save cta-update-btn"
-                >
-                    Update {cta.type === 'buy' ? 'Buy' : 'Sell'} Card
-                </button>
+                <div className="admin-table-container">
+                    <table className="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Make (EN/AR)</th>
+                                <th>Model (EN/AR)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {carDefs.map(def => (
+                                <tr key={def.id}>
+                                    <td>{def.make_en} / {def.make_ar}</td>
+                                    <td>{def.model_en} / {def.model_ar}</td>
+                                    <td>
+                                        <button onClick={() => deleteDefinition(def.id)} className="btn-delete">
+                                            🗑️
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        ))}
-    </div>
-</div>
 
 
+            <div className="admin-content-card cta-management-section">
+                <h2 className="admin-card-header">3. Home CTA Sections (Buy/Sell)</h2>
+                <div className="cta-grid-container">
+                    {ctaContent.map((cta, index) => (
+                        <div key={cta.id} className="cta-admin-card">
+                            <h4 className="cta-card-type">
+                                {cta.type === 'buy' ? 'Left Card' : 'Right Card'}
+                            </h4>
+                            
+                            <div className="admin-field-container">
+                                <label>Title ({lang.toUpperCase()})</label>
+                                <input 
+                                    className="admin-field-input-box" 
+                                    value={lang === 'en' ? cta.title_en : cta.title_ar} 
+                                    onChange={(e) => {
+                                        const newData = [...ctaContent];
+                                        newData[index][lang === 'en' ? 'title_en' : 'title_ar'] = e.target.value;
+                                        setCtaContent(newData);
+                                    }}
+                                />
+                            </div>
+
+                            <div className="admin-field-container">
+                                <label>Description ({lang.toUpperCase()})</label>
+                                <textarea 
+                                    className="admin-field-input-box" 
+                                    rows="3"
+                                    value={lang === 'en' ? cta.sub_title_en : cta.sub_title_ar} 
+                                    onChange={(e) => {
+                                        const newData = [...ctaContent];
+                                        newData[index][lang === 'en' ? 'sub_title_en' : 'sub_title_ar'] = e.target.value;
+                                        setCtaContent(newData);
+                                    }}
+                                />
+                            </div>
+
+                            <div className="admin-field-container">
+                                <label>Button Link</label>
+                                <input 
+                                    className="admin-field-input-box" 
+                                    value={cta.btn_link} 
+                                    onChange={(e) => {
+                                        const newData = [...ctaContent];
+                                        newData[index].btn_link = e.target.value;
+                                        setCtaContent(newData);
+                                    }}
+                                />
+                            </div>
+
+                            <button 
+                                onClick={() => updateCtaCard(index)} 
+                                className="admin-btn-save cta-update-btn"
+                            >
+                                Update {cta.type === 'buy' ? 'Buy' : 'Sell'} Card
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <FeaturedManager />
+            <BrowseManager />
 
             
         </div>
