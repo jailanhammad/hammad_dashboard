@@ -8,8 +8,13 @@ import WhyUsManager from './whyusmanager';
 import ReviewsManager from './reviewsmanager';
 import FooterManager from './footermanager';
 import NavManager from './navmanager';
+import { Link, useLocation } from 'react-router-dom';
 
 const WebManagement = () => {
+
+    const location = useLocation(); 
+    const isActive = (path) => location.pathname === path;
+
     const [loading, setLoading] = useState(false);
     const [lang, setLang] = useState('en'); 
     const [content, setContent] = useState({
@@ -177,6 +182,7 @@ useEffect(() => {
 }, []);
 
 
+
     return (
         <div className="admin-dashboard-wrapper" dir="ltr">
 
@@ -193,13 +199,48 @@ useEffect(() => {
                 </div>
             </div>
 
+       
             <div className="admin-tabs-list">
-                {['Home Page', 'About Us', 'Contact', 'Gallery', 'Services'].map((tab) => (
-                    <button key={tab} className={`admin-tab-item ${tab === 'Home Page' ? 'is-active' : ''}`}>{tab}</button>
-                ))}
+                
+                <Link to="/website">
+                    <button className={`admin-tab-item ${isActive('/website') ? 'is-active' : ''}`}>
+                        Home Page
+                    </button>
+                </Link>
+
+                <Link to="/aboutwebsite">
+                    <button className={`admin-tab-item ${isActive('/aboutwebsite') ? 'is-active' : ''}`}>
+                        About Us
+                    </button>
+                </Link>
+
+                <Link to="/admin/dashboard/contact">
+                    <button className={`admin-tab-item ${isActive('/admin/dashboard/contact') ? 'is-active' : ''}`}>
+                        Contact
+                    </button>
+                </Link>
+
+                <Link to="/admin/dashboard/gallery">
+                    <button className={`admin-tab-item ${isActive('/admin/dashboard/gallery') ? 'is-active' : ''}`}>
+                        Gallery
+                    </button>
+                </Link>
+
+                <Link to="/admin/dashboard/services">
+                    <button className={`admin-tab-item ${isActive('/admin/dashboard/services') ? 'is-active' : ''}`}>
+                        Services
+                    </button>
+                </Link>
+
                 <button className="admin-tab-add-btn">Add Page +</button>
             </div>
-            
+
+            <div className="tab-content-panel" style={{ marginTop: '20px' }}>
+                <p style={{ color: '#aaa' }}>Home Page Content Management</p>
+            </div>
+
+       
+
             <NavManager />
 
             <div className="admin-content-card">

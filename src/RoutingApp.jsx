@@ -12,6 +12,8 @@ import Notifications from './pages/notifications';
 import Settings from './pages/settings';
 import VehicleEdit from './components/vehicleedit';
 import Login from './pages/login';
+import AboutWebPage from './components/aboutwebpage';
+import AboutWebsite from './pages/aboutwebsite';
 
 
 const RoutingApp = () => {
@@ -32,6 +34,10 @@ const RoutingApp = () => {
                 <Route path="/notifications" element={<Notifications />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/admin/edit/:id" element={<VehicleEdit />} />
+
+                <Route path="/aboutwebpage" element={<AboutWebPage />} />
+                <Route path="/aboutwebsite" element={<AboutWebsite />} />
+
 
             </Routes>
         </Router>
