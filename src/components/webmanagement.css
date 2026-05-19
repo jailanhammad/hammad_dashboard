@@ -509,7 +509,7 @@
 }
 
 .contact-box-title {
-    color: #e50914;
+    color: #ffffff;
     margin-bottom: 15px;
     font-family: "Poppins";
 }
@@ -603,14 +603,12 @@
 
 /* most sold page management */
 
-/* الحاوية الخارجية والتباعد */
 .ms-manager-container {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* لوحة البوكس الرئيسي الأسود */
 .ms-content-box {
     background-color: #111;
     padding: 25px;
@@ -637,14 +635,12 @@
     font-size: 14px;
 }
 
-/* غلاف تجميع كروت السيارات */
 .ms-cards-wrapper {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-/* تصميم كارت السيارة المنفصل داخل لوحة الإدارة */
 .ms-admin-card {
     background-color: #1a1a1a;
     border: 1px solid #2a2a2a;
@@ -656,7 +652,6 @@
     gap: 20px;
 }
 
-/* شارة المركز والترتيب المكتوبة فوق */
 .ms-card-badge {
     position: absolute;
     top: -12px;
@@ -671,7 +666,6 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-/* تقسيم المدخلات على شبكة رباعية الأعمدة */
 .ms-card-inputs-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -679,7 +673,6 @@
     margin-top: 5px;
 }
 
-/* تجميع الليبل والإنبوت */
 .ms-input-group {
     display: flex;
     flex-direction: column;
@@ -692,7 +685,6 @@
     font-weight: 500;
 }
 
-/* تصميم حقول الإدخال */
 .ms-admin-input {
     width: 100%;
     padding: 10px;
@@ -710,7 +702,6 @@
     outline: none;
 }
 
-/* زر حفظ تعديلات الكارت */
 .ms-btn-save-card {
     align-self: flex-end;
     padding: 10px 20px;
@@ -733,7 +724,6 @@
     cursor: not-allowed;
 }
 
-/* لضمان التوافق مع الشاشات المتوسطة والصغيرة */
 @media (max-width: 900px) {
     .ms-card-inputs-grid {
         grid-template-columns: 1fr 1fr;

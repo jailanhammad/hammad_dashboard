@@ -226,8 +226,8 @@ useEffect(() => {
                     </button>
                 </Link>
 
-                <Link to="/admin/dashboard/services">
-                    <button className={`admin-tab-item ${isActive('/admin/dashboard/services') ? 'is-active' : ''}`}>
+                <Link to="/serviceswebsite">
+                    <button className={`admin-tab-item ${isActive('/serviceswebsite') ? 'is-active' : ''}`}>
                         Services
                     </button>
                 </Link>
