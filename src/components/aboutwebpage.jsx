@@ -125,7 +125,7 @@ const AboutWebPage = () => {
                 <Link to="/website"><button className={`admin-tab-item ${isActive('/website') ? 'is-active' : ''}`}>Home Page</button></Link>
                 <Link to="/aboutwebsite"><button className={`admin-tab-item ${isActive('/aboutwebsite') ? 'is-active' : ''}`}>About Us</button></Link>
                 <Link to="/contactwebsite"><button className={`admin-tab-item ${isActive('/contactwebsite') ? 'is-active' : ''}`}>Contact</button></Link>
-                <Link to="/admin/dashboard/gallery"><button className={`admin-tab-item ${isActive('/admin/dashboard/gallery') ? 'is-active' : ''}`}>Gallery</button></Link>
+                <Link to="/soldwebsite"><button className={`admin-tab-item ${isActive('/soldwebsite') ? 'is-active' : ''}`}>Most Sold</button></Link>
                 <Link to="/admin/dashboard/services"><button className={`admin-tab-item ${isActive('/admin/dashboard/services') ? 'is-active' : ''}`}>Services</button></Link>
                 <button className="admin-tab-add-btn">Add Page +</button>
             </div>

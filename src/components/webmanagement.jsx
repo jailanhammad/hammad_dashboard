@@ -220,9 +220,9 @@ useEffect(() => {
                     </button>
                 </Link>
 
-                <Link to="/admin/dashboard/gallery">
-                    <button className={`admin-tab-item ${isActive('/admin/dashboard/gallery') ? 'is-active' : ''}`}>
-                        Gallery
+                <Link to="/soldwebsite">
+                    <button className={`admin-tab-item ${isActive('/soldwebsite') ? 'is-active' : ''}`}>
+                       Most Sold
                     </button>
                 </Link>
 
