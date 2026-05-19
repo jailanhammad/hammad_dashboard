@@ -214,8 +214,8 @@ useEffect(() => {
                     </button>
                 </Link>
 
-                <Link to="/admin/dashboard/contact">
-                    <button className={`admin-tab-item ${isActive('/admin/dashboard/contact') ? 'is-active' : ''}`}>
+                <Link to="/contactwebsite">
+                    <button className={`admin-tab-item ${isActive('/contactwebsite') ? 'is-active' : ''}`}>
                         Contact
                     </button>
                 </Link>

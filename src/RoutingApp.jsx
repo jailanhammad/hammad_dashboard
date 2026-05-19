@@ -14,6 +14,7 @@ import VehicleEdit from './components/vehicleedit';
 import Login from './pages/login';
 import AboutWebPage from './components/aboutwebpage';
 import AboutWebsite from './pages/aboutwebsite';
+import ContactWebsite from './pages/contactwebsite';
 
 
 const RoutingApp = () => {
@@ -37,6 +38,7 @@ const RoutingApp = () => {
 
                 <Route path="/aboutwebpage" element={<AboutWebPage />} />
                 <Route path="/aboutwebsite" element={<AboutWebsite />} />
+                <Route path="/contactwebsite" element={<ContactWebsite />} />
 
 
             </Routes>

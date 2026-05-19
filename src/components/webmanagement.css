@@ -497,3 +497,105 @@
         flex-direction: column;
     }
 }
+
+
+/* contact website manager  */
+
+.contact-content-box {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+.contact-box-title {
+    color: #e50914;
+    margin-bottom: 15px;
+    font-family: "Poppins";
+}
+
+.contact-loading-text {
+    color: #fff;
+}
+
+.contact-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grid-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.grid-three-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.grid-five-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-label-main {
+    color: #aaa;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-label-sub {
+    color: #888;
+    font-size: 12px;
+}
+
+.contact-text-input {
+    width: 100%;
+    padding: 10px;
+    background-color: #222;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-text-input:focus {
+    border-color: #e50914;
+    outline: none;
+}
+
+.contact-cards-section {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-save-contact {
+    padding: 12px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-save-contact:hover {
+    background-color: #b80710;
+}
