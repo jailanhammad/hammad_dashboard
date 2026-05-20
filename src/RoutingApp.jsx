@@ -18,6 +18,8 @@ import ContactWebsite from './pages/contactwebsite';
 import SoldWebsite from './pages/soldwebsite';
 import ServicesWebsite from './pages/serviceswebsite';
 import InstallmentsWebsite from './pages/installmentswebsite';
+import SoonWebsite from './pages/soonwebsite';
+import SoonWebPage from './components/soonwebpage';
 
 
 const RoutingApp = () => {
@@ -47,6 +49,8 @@ const RoutingApp = () => {
                 <Route path="/soldwebsite" element={<SoldWebsite />} />
                 <Route path="/serviceswebsite" element={<ServicesWebsite />} />
                 <Route path="/installmentswebsite" element={<InstallmentsWebsite />} />
+                <Route path="/soonwebsite" element={<SoonWebsite />} />
+                <Route path="/soonwebpage" element={<SoonWebPage />} />
 
 
             </Routes>

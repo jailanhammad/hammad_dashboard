@@ -233,6 +233,7 @@ useEffect(() => {
                 </Link>
 
                 <Link to="/installmentswebsite"><button className={`admin-tab-item ${isActive('/installmentswebsite') ? 'is-active' : ''}`}>Installments</button></Link>
+                <Link to="/soonwebsite"><button className={`admin-tab-item ${isActive('/soonwebsite') ? 'is-active' : ''}`}>Coming Soon</button></Link>
 
 
                 {/* <button className="admin-tab-add-btn">Add Page +</button> */}
