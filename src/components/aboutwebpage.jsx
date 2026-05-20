@@ -101,7 +101,7 @@ const AboutWebPage = () => {
             }
         }
 
-        alert(`About Us Content Saved Successfully! ✅`);
+        alert(`About Us Content Saved Successfully! `);
         fetchAboutData(); 
         setLoading(false);
     };
@@ -127,7 +127,9 @@ const AboutWebPage = () => {
                 <Link to="/contactwebsite"><button className={`admin-tab-item ${isActive('/contactwebsite') ? 'is-active' : ''}`}>Contact</button></Link>
                 <Link to="/soldwebsite"><button className={`admin-tab-item ${isActive('/soldwebsite') ? 'is-active' : ''}`}>Most Sold</button></Link>
                 <Link to="/serviceswebsite"><button className={`admin-tab-item ${isActive('/serviceswebsite') ? 'is-active' : ''}`}>Services</button></Link>
-                <button className="admin-tab-add-btn">Add Page +</button>
+                <Link to="/installmentswebsite"><button className={`admin-tab-item ${isActive('/installmentswebsite') ? 'is-active' : ''}`}>Installments</button></Link>
+
+                {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>
 
             <div className="tab-content-panel" style={{ marginTop: '20px' }}>

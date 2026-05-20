@@ -17,6 +17,7 @@ import AboutWebsite from './pages/aboutwebsite';
 import ContactWebsite from './pages/contactwebsite';
 import SoldWebsite from './pages/soldwebsite';
 import ServicesWebsite from './pages/serviceswebsite';
+import InstallmentsWebsite from './pages/installmentswebsite';
 
 
 const RoutingApp = () => {
@@ -42,9 +43,10 @@ const RoutingApp = () => {
                 <Route path="/aboutwebsite" element={<AboutWebsite />} />
 
                 <Route path="/contactwebsite" element={<ContactWebsite />} />
-                
+
                 <Route path="/soldwebsite" element={<SoldWebsite />} />
                 <Route path="/serviceswebsite" element={<ServicesWebsite />} />
+                <Route path="/installmentswebsite" element={<InstallmentsWebsite />} />
 
 
             </Routes>

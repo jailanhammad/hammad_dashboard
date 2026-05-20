@@ -4,6 +4,8 @@ import './webmanagement.css';
 import ReviewsManager from './reviewsmanager';
 import FooterManager from './footermanager';
 import NavManager from './navmanager';
+import WhyUsManager from './whyusmanager';
+
 import { Link, useLocation } from 'react-router-dom';
 
 const SoldWebPage = () => {
@@ -59,7 +61,7 @@ const SoldWebPage = () => {
             .eq('id', carId);
 
         if (!error) {
-            alert(`Car "${carToUpdate.name}" Updated Successfully! ✅`);
+            alert(`Car "${carToUpdate.name}" Updated Successfully! `);
             fetchMostSoldCars(); 
         } else {
             console.error('Update error:', error);
@@ -69,7 +71,7 @@ const SoldWebPage = () => {
     };
 
     const handleDeleteCar = async (carId, carName) => {
-        if (!window.confirm(`Are you sure you want to delete "${carName}"? 🚨`)) return;
+        if (!window.confirm(`Are you sure you want to delete "${carName}"? `)) return;
 
         setLoading(true);
         const { error } = await supabase
@@ -78,7 +80,7 @@ const SoldWebPage = () => {
             .eq('id', carId);
 
         if (!error) {
-            alert(`Car "${carName}" Deleted Successfully! 🗑️`);
+            alert(`Car "${carName}" Deleted Successfully! `);
             fetchMostSoldCars(); 
         } else {
             console.error('Delete error:', error);
@@ -141,7 +143,9 @@ const SoldWebPage = () => {
                 <Link to="/contactwebsite"><button className={`admin-tab-item ${isActive('/contactwebsite') ? 'is-active' : ''}`}>Contact</button></Link>
                 <Link to="/soldwebsite"><button className={`admin-tab-item ${isActive('/soldwebsite') ? 'is-active' : ''}`}>Most Sold</button></Link>
                 <Link to="/serviceswebsite"><button className={`admin-tab-item ${isActive('/serviceswebsite') ? 'is-active' : ''}`}>Services</button></Link>
-                <button className="admin-tab-add-btn">Add Page +</button>
+                <Link to="/installmentswebsite"><button className={`admin-tab-item ${isActive('/installmentswebsite') ? 'is-active' : ''}`}>Installments</button></Link>
+
+                {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>
 
             <div style={{ marginBottom: '20px' }}>
@@ -319,6 +323,7 @@ const SoldWebPage = () => {
                 )}
             </div>
 
+            <WhyUsManager />
             <ReviewsManager />
             <FooterManager />
 

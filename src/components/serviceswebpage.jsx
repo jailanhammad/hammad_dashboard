@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import ReviewsManager from './reviewsmanager';
 import FooterManager from './footermanager';
 import NavManager from './navmanager';
+import WhyUsManager from './whyusmanager';
 
 const ServicesWebPage = () => {
     const [loading, setLoading] = useState(true);
@@ -244,7 +245,9 @@ const ServicesWebPage = () => {
                 <Link to="/contactwebsite"><button className={`admin-tab-item ${isActive('/contactwebsite') ? 'is-active' : ''}`}>Contact</button></Link>
                 <Link to="/soldwebsite"><button className={`admin-tab-item ${isActive('/soldwebsite') ? 'is-active' : ''}`}>Most Sold</button></Link>
                 <Link to="/serviceswebsite"><button className={`admin-tab-item ${isActive('/serviceswebsite') ? 'is-active' : ''}`}>Services</button></Link>
-                <button className="admin-tab-add-btn">Add Page +</button>
+                <Link to="/installmentswebsite"><button className={`admin-tab-item ${isActive('/installmentswebsite') ? 'is-active' : ''}`}>Installments</button></Link>
+
+                {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>
 
             <div style={{ marginBottom: '20px' }}>
@@ -469,6 +472,7 @@ const ServicesWebPage = () => {
                 </div>
             </div>
 
+            <WhyUsManager />
             <ReviewsManager />
             <FooterManager />
         </div>

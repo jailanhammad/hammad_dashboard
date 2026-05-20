@@ -78,7 +78,7 @@ const WebManagement = () => {
 
         if (!updateError) {
             setContent({ ...content, image_url: publicUrl });
-            alert('Image uploaded and saved! ✅');
+            alert('Image uploaded and saved! ');
         }
         setLoading(false);
     };
@@ -94,7 +94,7 @@ const WebManagement = () => {
 
         if (!error) {
             setContent({ ...content, image_url: '' });
-            alert('Image removed! 🗑️');
+            alert('Image removed! ');
         }
         setLoading(false);
     };
@@ -112,9 +112,9 @@ const WebManagement = () => {
             .eq('section_key', 'hero_section'); 
 
         if (!error) {
-            alert('Text updated successfully! ✅');
+            alert('Text updated successfully! ');
         } else {
-            alert('Error saving data! ❌');
+            alert('Error saving data! ');
         }
         setLoading(false);
     };
@@ -133,7 +133,7 @@ const addDefinition = async () => {
     if (!error) {
         fetchCarDefinitions(); 
         setNewDef({ make_en: '', make_ar: '', model_en: '', model_ar: '' }); 
-        alert("New Brand/Model Added! 🚗");
+        alert("New Brand/Model Added! ");
     } else {
         alert(error.message);
     }
@@ -232,7 +232,10 @@ useEffect(() => {
                     </button>
                 </Link>
 
-                <button className="admin-tab-add-btn">Add Page +</button>
+                <Link to="/installmentswebsite"><button className={`admin-tab-item ${isActive('/installmentswebsite') ? 'is-active' : ''}`}>Installments</button></Link>
+
+
+                {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>
 
             <div className="tab-content-panel" style={{ marginTop: '20px' }}>
