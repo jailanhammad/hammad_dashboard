@@ -894,3 +894,54 @@
     align-items: center;
     font-size: 16px;
 }
+
+
+.actions-cell {
+    padding: 10px;
+    text-align: center;
+}
+
+.actions-wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.admin-action-btn {
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 70px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-edit-mode {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+}
+
+.btn-edit-mode:hover {
+    background-color: #e31b23;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(227, 27, 35, 0.3);
+}
+
+.btn-delete-mode {
+    background-color: #441111;
+    color: #ff4d4d;
+    border: 1px solid #661111;
+}
+
+.btn-delete-mode:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-color: #ff0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}

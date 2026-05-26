@@ -19,7 +19,7 @@ import SoldWebsite from './pages/soldwebsite';
 import ServicesWebsite from './pages/serviceswebsite';
 import InstallmentsWebsite from './pages/installmentswebsite';
 import SoonWebsite from './pages/soonwebsite';
-import SoonWebPage from './components/soonwebpage';
+import RecommendedWebsite from './pages/recommendedwebsite';
 
 
 const RoutingApp = () => {
@@ -50,7 +50,7 @@ const RoutingApp = () => {
                 <Route path="/serviceswebsite" element={<ServicesWebsite />} />
                 <Route path="/installmentswebsite" element={<InstallmentsWebsite />} />
                 <Route path="/soonwebsite" element={<SoonWebsite />} />
-                <Route path="/soonwebpage" element={<SoonWebPage />} />
+                <Route path="/recommended" element={<RecommendedWebsite />} />
 
 
             </Routes>
