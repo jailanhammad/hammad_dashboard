@@ -85,6 +85,13 @@ const ExploreContent = () => {
                     </button>
                 </Link>
 
+
+                <Link to="/vehiclesapp">
+                    <button className={`admin-tab-item ${isActive('/vehiclesapp') ? 'is-active' : ''}`}>
+                        Vehicles
+                    </button>
+                </Link>
+
                 {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>
 

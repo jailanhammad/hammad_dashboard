@@ -21,6 +21,7 @@ import InstallmentsWebsite from './pages/installmentswebsite';
 import SoonWebsite from './pages/soonwebsite';
 import RecommendedWebsite from './pages/recommendedwebsite';
 import ExplorePageApp from './components/explorepageapp';
+import VehiclesPageApp from './components/vehiclespageapp';
 
 
 const RoutingApp = () => {
@@ -57,6 +58,7 @@ const RoutingApp = () => {
 
 
                 <Route path="/explore" element={<ExplorePageApp />} />
+                <Route path="/vehiclesapp" element={<VehiclesPageApp />} />
 
 
             </Routes>
