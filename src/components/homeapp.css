@@ -1,0 +1,194 @@
+
+ .hm-admin-featured-wrapper {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    font-family: system-ui, -apple-system, sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .hm-admin-header {
+    margin-bottom: 24px;
+  }
+  
+  .hm-admin-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .hm-admin-form {
+    background-color: #1a1a1a;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #333;
+  }
+  
+  .hm-admin-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .hm-admin-full-width {
+    grid-column: span 2;
+  }
+  
+  .hm-admin-input-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hm-admin-input-group label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .hm-admin-input-group input {
+    background-color: #000000;
+    border: 1px solid #333;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .hm-admin-input-group input:focus {
+    border-color: #e50914; 
+  }
+  
+  /* Buttons */
+  .hm-admin-submit-btn {
+    background-color: #e50914;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .hm-admin-submit-btn:hover {
+    background-color: #b20710;
+  }
+  
+  .hm-admin-submit-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+  
+  .hm-admin-cancel-btn {
+    background-color: transparent;
+    color: #aaa;
+    border: 1px solid #555;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 12px;
+    transition: all 0.3s;
+  }
+  
+  .hm-admin-cancel-btn:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .hm-admin-divider {
+    border: 0;
+    height: 1px;
+    background-color: #333;
+    margin: 32px 0;
+  }
+  
+  .hm-admin-table-container {
+    overflow-x: auto;
+  }
+  
+  .hm-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .hm-admin-table th {
+    background-color: #1a1a1a;
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 16px;
+    border-bottom: 2px solid #333;
+  }
+  
+  .hm-admin-table td {
+    padding: 16px;
+    border-bottom: 1px solid #222;
+    vertical-align: middle;
+  }
+  
+  .hm-admin-thumbnail {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #333;
+  }
+  
+  .hm-admin-ar-text {
+    color: #aaa;
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+  }
+  
+  .hm-admin-actions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .hm-admin-edit-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .hm-admin-edit-btn:hover {
+    background-color: #555;
+  }
+  
+  .hm-admin-delete-btn {
+    background-color: transparent;
+    color: #e50914;
+    border: 1px solid #e50914;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .hm-admin-delete-btn:hover {
+    background-color: #e50914;
+    color: #fff;
+  }
+  
+  .hm-admin-empty {
+    text-align: center;
+    color: #666;
+    padding: 32px !important;
+  }

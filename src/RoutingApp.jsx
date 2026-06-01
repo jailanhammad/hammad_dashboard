@@ -20,6 +20,7 @@ import ServicesWebsite from './pages/serviceswebsite';
 import InstallmentsWebsite from './pages/installmentswebsite';
 import SoonWebsite from './pages/soonwebsite';
 import RecommendedWebsite from './pages/recommendedwebsite';
+import ExplorePageApp from './components/explorepageapp';
 
 
 const RoutingApp = () => {
@@ -51,6 +52,11 @@ const RoutingApp = () => {
                 <Route path="/installmentswebsite" element={<InstallmentsWebsite />} />
                 <Route path="/soonwebsite" element={<SoonWebsite />} />
                 <Route path="/recommended" element={<RecommendedWebsite />} />
+
+
+
+
+                <Route path="/explore" element={<ExplorePageApp />} />
 
 
             </Routes>

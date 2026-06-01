@@ -737,14 +737,12 @@
 }
 
 
-/* تقسيم الفورم لعمودين متساويين في الشاشات الكبيرة */
 .admin-form-split-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-/* حاوية شبكة الكروت الكبرى */
 .admin-cards-grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -752,9 +750,8 @@
     margin-top: 20px;
 }
 
-/* الكارت الفاخر المظلم */
 .admin-custom-premium-card {
-    background: #111113; /* لون مطابق لخلفية الداش بورد الداكنة */
+    background: #111113; 
     border: 1px solid #27272a;
     border-radius: 10px;
     padding: 20px;
@@ -770,7 +767,6 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* بار الكارت العلوي */
 .admin-card-top-bar {
     display: flex;
     justify-content: space-between;
@@ -793,7 +789,6 @@
     align-items: center;
 }
 
-/* محتوى وعناوين النصوص */
 .admin-card-main-body h4 {
     margin: 5px 0 2px 0;
     color: #f4f4f5;
@@ -832,7 +827,6 @@
     font-weight: bold;
 }
 
-/* أزرار التحكم السفلية داخل الكارت */
 .admin-card-action-footer {
     display: flex;
     gap: 10px;

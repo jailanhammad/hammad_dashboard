@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './appmanagement.css';
 import { supabase } from '../supabase'; 
-import HomeApp from './homeapp';
 import { Link, useLocation } from 'react-router-dom';
+import BrandManager from './exploremanager';
 
-const AppManagement = () => {
+const ExploreContent = () => {
 
     const location = useLocation(); 
     const isActive = (path) => location.pathname === path;
@@ -71,7 +71,6 @@ const AppManagement = () => {
             </div>
 
 
-
             <div className="admin-tabs-list">
                 
                 <Link to="/mobile-app">
@@ -86,13 +85,13 @@ const AppManagement = () => {
                     </button>
                 </Link>
 
-
-
                 {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>
 
+    
+
             <div style={{ marginTop: '24px' }}>
-                <HomeApp 
+                <BrandManager 
                     lang={lang} 
                     content={content} 
                     setContent={setContent} 
@@ -100,10 +99,9 @@ const AppManagement = () => {
                     loading={loading} 
                 />
             </div>
-
             
         </div>
     );
 };
 
-export default AppManagement;
+export default ExploreContent;
