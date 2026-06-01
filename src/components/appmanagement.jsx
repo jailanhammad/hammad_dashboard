@@ -93,6 +93,12 @@ const AppManagement = () => {
                     </button>
                 </Link>
 
+                <Link to="/aboutapp">
+                    <button className={`admin-tab-item ${isActive('/aboutapp') ? 'is-active' : ''}`}>
+                        About Us
+                    </button>
+                </Link>
+
 
                 {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>

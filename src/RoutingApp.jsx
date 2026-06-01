@@ -22,6 +22,7 @@ import SoonWebsite from './pages/soonwebsite';
 import RecommendedWebsite from './pages/recommendedwebsite';
 import ExplorePageApp from './components/explorepageapp';
 import VehiclesPageApp from './components/vehiclespageapp';
+import AboutAppPage from './components/aboutapppage';
 
 
 const RoutingApp = () => {
@@ -59,6 +60,7 @@ const RoutingApp = () => {
 
                 <Route path="/explore" element={<ExplorePageApp />} />
                 <Route path="/vehiclesapp" element={<VehiclesPageApp />} />
+                <Route path="/aboutapp" element={<AboutAppPage />} />
 
 
             </Routes>

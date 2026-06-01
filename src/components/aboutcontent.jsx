@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './appmanagement.css';
 import { supabase } from '../supabase'; 
 import { Link, useLocation } from 'react-router-dom';
-import BrandManager from './exploremanager';
+import AboutManager from './aboutmanager';
 
-const ExploreContent = () => {
+const AboutContent = () => {
 
     const location = useLocation(); 
     const isActive = (path) => location.pathname === path;
@@ -99,14 +99,13 @@ const ExploreContent = () => {
                     </button>
                 </Link>
 
-
                 {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>
 
     
 
             <div style={{ marginTop: '24px' }}>
-                <BrandManager 
+                <AboutManager 
                     lang={lang} 
                     content={content} 
                     setContent={setContent} 
@@ -119,4 +118,4 @@ const ExploreContent = () => {
     );
 };
 
-export default ExploreContent;
+export default AboutContent;
