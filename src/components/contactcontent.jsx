@@ -104,6 +104,12 @@ const ContactContent = () => {
                         Contact Us
                     </button>
                 </Link>
+
+                <Link to="/reviewsapp">
+                    <button className={`admin-tab-item ${isActive('/reviewsapp') ? 'is-active' : ''}`}>
+                       Reviews
+                    </button>
+                </Link>
                 
                 {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>

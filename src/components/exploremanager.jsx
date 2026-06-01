@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../supabase';
-import './exploreapp.css'; // توحيد التنسيق مع باقي الداشبورد
+import './exploreapp.css';
 
 const BrandManager = ({ lang }) => {
   const [brands, setBrands] = useState([]);
@@ -64,7 +64,7 @@ const BrandManager = ({ lang }) => {
       
       <form onSubmit={handleSubmit} className="admin-form">
         <div className="form-grid">
-          {/* اسم الماركة يتبدل حسب لغة الداشبورد */}
+
           <input 
             type="text" 
             placeholder={isAr ? 'اسم الماركة' : 'Brand Name'} 
@@ -73,7 +73,6 @@ const BrandManager = ({ lang }) => {
             required 
           />
           
-          {/* عدد السيارات المتاحة */}
           <input 
             type="number" 
             placeholder={isAr ? 'عدد السيارات' : 'Vehicle Count'} 
@@ -81,7 +80,6 @@ const BrandManager = ({ lang }) => {
             onChange={(e) => setFormData({...formData, vehicle_count: parseInt(e.target.value)})} 
           />
 
-          {/* رابط شعار الماركة */}
           <input 
             type="text" 
             placeholder="Logo URL (SVG/PNG)" 
