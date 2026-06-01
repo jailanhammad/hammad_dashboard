@@ -99,6 +99,11 @@ const VehiclesContent = () => {
                     </button>
                 </Link>
 
+                <Link to="/contactapp">
+                    <button className={`admin-tab-item ${isActive('/contactapp') ? 'is-active' : ''}`}>
+                        Contact Us
+                    </button>
+                </Link>
                 {/* <button className="admin-tab-add-btn">Add Page +</button> */}
             </div>
 
